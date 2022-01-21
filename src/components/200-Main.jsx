@@ -5,6 +5,9 @@ import { base64ToHex, hexToBase64 } from "../utils/converter"
 
 const Main=()=>{
     const[direction,setDirection]=useState('hexToBase64')
+    const handleDirection=(e)=>{
+        setDirection(e.target.value)
+    }
     const[inputValue,setInputValue]=useState()
     const handleInputValue=(e)=>{
         setInputValue(e.target.value)
@@ -12,9 +15,7 @@ const Main=()=>{
     const[result,setResult]=useState('')
     const convert=(e)=>{
         e.preventDefault()
-        // console.log(inputValue)
-        const res=direction==='hexToBase64'?hexToBase64({inputValue,setResult}):base64ToHex({inputValue,setResult})
-        // setResult(res)
+        direction==='hexToBase64'?hexToBase64({inputValue,setResult}):base64ToHex({inputValue,setResult})
     }
 
     return(
@@ -30,9 +31,9 @@ const Main=()=>{
                     </Form.Text>
                 </Form.Group>
 
-                <Form.Select aria-label="Select type of convertion" className='w-50 mx-auto'>
-                    <option onClick={()=>setDirection('hexToBase64')}>From hex to base64</option>
-                    <option onClick={()=>setDirection('base64ToHex')}>From base64 to hex</option>
+                <Form.Select aria-label="Select type of convertion" className='w-50 mx-auto' onChange={handleDirection}>
+                    <option value='hexToBase64'>From hex to base64</option>
+                    <option value='base64ToHex'>From base64 to hex</option>
                 </Form.Select>
 
                 <Container fluid className='mt-5 w-50'>
@@ -44,7 +45,7 @@ const Main=()=>{
             </Form>
 
             {result&&
-                <Alert className='bg-light mt-5 w-50 mx-auto'>
+                <Alert className='bg-light text-dark mt-5 w-75 mx-auto'>
                     {result}
                 </Alert>
             }
