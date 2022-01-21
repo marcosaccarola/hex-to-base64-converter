@@ -1,3 +1,4 @@
+import '../CSS/style.css'
 import { useState } from "react"
 import { Alert, Button, Container, Form, OverlayTrigger, Tooltip } from "react-bootstrap"
 import { base64ToHex, hexToBase64 } from "../utils/converter"
@@ -21,7 +22,7 @@ const Main=({direction,setDirection})=>{
     }
 
     return(
-        <Container className='bg-dark vh-100 mt-5'>
+        <Container className='bg-dark vh-100 mt-5 rounded'>
 
             <Form className=''>
 

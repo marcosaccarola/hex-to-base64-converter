@@ -28,7 +28,6 @@ const Bar=({direction,setDirection})=>{
                             height="30"
                             className="d-inline-block align-top"
                             />{' '}
-                        {/* hex to base64 */}
                         {direction==='hexToBase64'?'from hex to base64':'from base64 to hex'}
                         </Navbar.Brand>
                 </OverlayTrigger>
