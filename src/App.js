@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import Bar from './components/100-Bar';
 import Main from './components/200-Main';
 
