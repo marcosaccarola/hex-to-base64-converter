@@ -1,11 +1,10 @@
 import { useState } from "react"
-import { Alert, Button, Container, Form } from "react-bootstrap"
+import { Alert, Button, Container, Form, OverlayTrigger, Tooltip } from "react-bootstrap"
 import { base64ToHex, hexToBase64 } from "../utils/converter"
 
 
-const Main=()=>{
+const Main=({direction,setDirection})=>{
 
-    const[direction,setDirection]=useState('hexToBase64')
     const changeDirection=()=>{
         direction==='hexToBase64'?setDirection('base64ToHex'):setDirection('hexToBase64')
     }
@@ -27,11 +26,20 @@ const Main=()=>{
             <Form className=''>
 
                 <Form.Group className="text-light w-50 mx-auto" controlId="formBasicEnter">
-                    <Form.Label 
-                        className='badge bg-dark border border-light text-wrap py-2 mt-4 fs-5 w-100' 
-                        onClick={()=>changeDirection()} 
-                        >{direction==='hexToBase64'?'from hex to base64':'from base64 to hex'}
-                    </Form.Label>
+                    <OverlayTrigger
+                            placement='top'
+                            overlay={
+                                <Tooltip>
+                                Click to swipe
+                                </Tooltip>
+                            }
+                            >
+                        <Form.Label 
+                            className='badge bg-dark border border-light text-wrap py-2 mt-4 fs-5 w-100' 
+                            onClick={()=>changeDirection()} 
+                            >{direction==='hexToBase64'?'from hex to base64':'from base64 to hex'}
+                        </Form.Label>
+                    </OverlayTrigger>
 
                     <Form.Text className="text-muted d-block mt-4 mb-1">
                     {direction==='hexToBase64'?'Enter hex to convert:':'Enter base64 to convert:'}
@@ -40,9 +48,18 @@ const Main=()=>{
                 </Form.Group>
 
                 <Container fluid className='mt-5 w-50 px-0'>
-                    <Button variant="warning" type="submit" className='w-100 fs-5 hover-danger' onClick={(e)=>convert(e)}>  
-                        Convert!
-                    </Button>
+                    <OverlayTrigger
+                        placement='top'
+                        overlay={
+                            <Tooltip>
+                            It converts <strong>{direction==='hexToBase64'?'from hex to base64':'from base64 to hex'}</strong>.
+                            </Tooltip>
+                        }
+                        >
+                        <Button variant="warning" type="submit" className='w-100 fs-5 hover-danger' onClick={(e)=>convert(e)}>  
+                            Convert!
+                        </Button>
+                    </OverlayTrigger>
                 </Container>
 
             </Form>
