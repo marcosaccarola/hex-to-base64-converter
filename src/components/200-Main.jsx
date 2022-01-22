@@ -28,7 +28,7 @@ const Main=({direction,setDirection})=>{
 
                 <Form.Group className="text-light w-50 mx-auto" controlId="formBasicEnter">
                     <OverlayTrigger
-                            placement='top'
+                            placement='bottom'
                             overlay={
                                 <Tooltip>
                                 Click to swipe
@@ -38,7 +38,9 @@ const Main=({direction,setDirection})=>{
                         <Form.Label 
                             className='badge bg-dark border border-light text-wrap py-2 mt-4 fs-5 w-100' 
                             onClick={()=>changeDirection()} 
-                            >{direction==='hexToBase64'?'from hex to base64':'from base64 to hex'}
+                            >
+                                {direction==='hexToBase64'?'from hex to base64':'from base64 to hex'}
+                                <svg className='mx-3' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffc107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M2.5 2v6h6M21.5 22v-6h-6"></path><path d="M22 11.5A10 10 0 0 0 3.2 7.2M2 12.5a10 10 0 0 0 18.8 4.2"></path></svg>
                         </Form.Label>
                     </OverlayTrigger>
 
@@ -50,7 +52,7 @@ const Main=({direction,setDirection})=>{
 
                 <Container fluid className='mt-5 w-50 px-0'>
                     <OverlayTrigger
-                        placement='top'
+                        placement='bottom'
                         overlay={
                             <Tooltip>
                             It converts <strong>{direction==='hexToBase64'?'from hex to base64':'from base64 to hex'}</strong>.
@@ -58,7 +60,7 @@ const Main=({direction,setDirection})=>{
                         }
                         >
                         <Button variant="warning" type="submit" className='w-100 fs-5 hover-danger' onClick={(e)=>convert(e)}>  
-                            Convert!
+                            Convert
                         </Button>
                     </OverlayTrigger>
                 </Container>

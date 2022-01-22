@@ -1,23 +1,23 @@
 @keyframes color-changer {
   0% {
-    background-color: #ffa500;
+    background-color: #ffc107;
   }
   50% {
     background-color: #212529;
   }
   100% {
-    background-color: #ffa500;
+    background-color: #ffc107;
   }
 }
 .bg-animation {
   animation-name: color-changer;
-  animation-duration: 20s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
 }
 .btn-warning {
-  background-color: #ffa500;
+  background-color: #ffc107;
 }
 .btn-warning:hover {
-  background-color: #dc3545;
+  background-color: #ffa500;
   border-color: black;
 }
