@@ -21,15 +21,15 @@ const Main=({direction,setDirection})=>{
     const convert=(e)=>{
         e.preventDefault()
         direction==='hexToBase64'?hexToBase64({inputValue,setResult}):base64ToHex({inputValue,setResult})
-        setStonedInput(inputValue)
-        setStonedDirection(direction)
+        setfrozenInput(inputValue)
+        setfrozenDirection(direction)
     }
 
-    const[stonedInput,setStonedInput]=useState()
-    const[stonedDirection,setStonedDirection]=useState()
+    const[frozenInput,setfrozenInput]=useState()
+    const[frozenDirection,setfrozenDirection]=useState()
 
     return(
-        <Container className='bg-dark vh-100 mt-5 rounded'>
+        <Container className='bg-dark mt-5 rounded py-5'>
 
             <Form className=''>
 
@@ -83,10 +83,10 @@ const Main=({direction,setDirection})=>{
         {result&&
 
             <Alert className='bg-light text-dark mt-5 w-50 mx-auto text-break'>
-                <p><strong>{stonedDirection==='hexToBase64'?'hex:':'base64'}</strong></p>
-                <p>{stonedInput}</p>
+                <p><strong>{frozenDirection==='hexToBase64'?'hex:':'base64'}</strong></p>
+                <p>{frozenInput}</p>
                 <hr />
-                <p><strong>{stonedDirection!=='hexToBase64'?'hex:':'base64'}</strong></p>
+                <p><strong>{frozenDirection!=='hexToBase64'?'hex:':'base64'}</strong></p>
                 <p>{result}</p>
             </Alert>
 

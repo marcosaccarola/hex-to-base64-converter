@@ -11,7 +11,7 @@ function App() {
   const[direction,setDirection]=useState('hexToBase64')
 
   return (
-    <div className="bg-animation">
+    <div className="bg-animation min-vh-100">
         <Bar direction={direction} setDirection={setDirection} />
         <Main direction={direction} setDirection={setDirection} />
     </div>
