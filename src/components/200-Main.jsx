@@ -95,7 +95,7 @@ const Main=({direction,setDirection})=>{
             <Container className='d-flex text-warning bg-dark w-50 mx-auto justify-content-end px-0 mt-5'>
                 <MdAlternateEmail className='text-warning me-3' onClick={()=>window.open('mailto:marco.saccarola.dev@gmail.com')} />
                 <BsLinkedin className='text-warning me-3' onClick={()=>window.open('https://www.linkedin.com/in/marcosaccarola/')} />
-                <BsGithub className='text-warning' onClick={()=>window.open('https://github.com/marcosaccarola')} />
+                <BsGithub className='text-warning' onClick={()=>window.open('https://github.com/marcosaccarola/hex-to-base64-converter')} />
             </Container>
 
 
