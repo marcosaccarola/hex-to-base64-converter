@@ -9,7 +9,7 @@ const Bar=({direction,setDirection})=>{
     }
 
     return(
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" className='sticky-top'>
             <Container>
 
                 <OverlayTrigger
