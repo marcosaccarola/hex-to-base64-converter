@@ -11,7 +11,7 @@
 }
 .bg-animation {
   animation-name: color-changer;
-  animation-duration: 90s;
+  animation-duration: 180s;
   animation-iteration-count: infinite;
 }
 .btn-warning {
